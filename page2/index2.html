@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  </head>
+
+  <title>Types of Whiskey</title>
+
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @font-face {
+    font-family: 'Butler-UltraLight';
+    src: url('Butler-UltraLight.woff2') format('woff2'),
+        url('Butler-UltraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Butler-Medium';
+            src: url('Butler-Medium.woff2') format('woff2'),
+                url('Butler-Medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Butler-Light';
+            src: url('Butler-Light.woff2') format('woff2'),
+                url('Butler-Light.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Butler-Black';
+            src: url('Butler-Black.woff2') format('woff2'),
+                url('Butler-Black.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Butler-Bold';
+            src: url('Butler-Bold.woff2') format('woff2'),
+                url('Butler-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Butler-ExtraBold';
+            src: url('Butler-ExtraBold.woff2') format('woff2'),
+                url('Butler-ExtraBold.woff') format('woff');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Butler';
+            src: url('Butler.woff2') format('woff2'),
+                url('Butler.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        html {
+          height: 100%;
+          overflow: hidden;
+        }
+
+        body { 
+          margin:0;
+          padding:0;
+        	perspective: 1px;
+        	transform-style: preserve-3d;
+          height: 100%;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          font-family: 'Butler';
+        }
+
+        h1 {
+           font-size: 250%
+        }
+
+        p {
+          font-size: 140%;
+          line-height: 150%;
+          color: #333;
+        }
+
+        .slide {
+          position: relative;
+          padding: 25vh 10%;
+          min-height: 110vh;
+          width: 100vw;
+          box-sizing: border-box;
+          box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+        	transform-style: inherit;
+        }
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 35%;
+          width: 320px;
+          height: auto;
+          transform: translateZ(.25px) scale(.75) translateX(-54%) translateY(-100%) rotate(2deg);
+          padding: 10px;
+          border-radius: 5px;
+          background: rgba(240,230,220, .7);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+        }
+
+        img:last-of-type {
+          transform: translateZ(.4px) scale(.6) translateX(-114%) translateY(-40%) rotate(-5deg);
+        }
+
+        .imgI{
+          position: absolute;
+          top: 50%;
+          left: 70%;
+          width: 320px;
+          height: auto;
+          transform: translateZ(.25px) scale(.6) translateX(-74%) translateY(-60%) rotate(-3deg);
+          padding: 10px;
+          border-radius: 5px;
+          background: rgba(240,230,220, .7);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+        }
+
+        .imgI:last-of-type {
+          transform: translateZ(.4px) scale(.6) translateX(-154%) translateY(-150%) rotate(6deg);
+        }
+
+        .imgT{
+          position: absolute;
+          top: 50%;
+          left: 70%;
+          width: 320px;
+          height: auto;
+          transform: translateZ(.25px) scale(.9) translateX(-54%) translateY(-100%) rotate(-7deg);
+          padding: 10px;
+          border-radius: 5px;
+          background: rgba(240,230,220, .7);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+        }
+
+        .imgT:last-of-type {
+          transform: translateZ(.4px) scale(.6) translateX(-154%) translateY(-40%) rotate(4deg);
+        }
+
+        .imgJ{
+          position: absolute;
+          top: 50%;
+          left: 70%;
+          width: 320px;
+          height: auto;
+          transform: translateZ(.25px) scale(.7) translateX(-74%) translateY(-90%) rotate(6deg);
+          padding: 10px;
+          border-radius: 5px;
+          background: rgba(240,230,220, .7);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+        }
+
+        .imgJ:last-of-type {
+          transform: translateZ(.4px) scale(.55) translateX(-164%) translateY(-20%) rotate(-4deg);
+        }
+
+
+
+        .slide:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          box-shadow: 0 0 8px 1px rgba(0, 0, 0, .7);
+        }
+
+        .title {
+          width: 50%;
+          padding: 4%;
+          border-radius: 5px;
+          background: rgba(0,0,0, .7);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+          transform: translateZ(.4px) scale(.6) translateX(-100%) translateY(10%) ;
+        }
+
+        .title2{
+          width: 50%;
+          padding: 4%;
+          border-radius: 5px;
+          background: rgba(0,0,0, .7);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+          transform: translateZ(.4px) scale(.6) translateX(120%) translateY(10%) ;
+        }
+
+        .title3{
+          width: 50%;
+          padding: 4%;
+          border-radius: 5px;
+          background: rgba(0,0,0, .7);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+          transform: translateZ(.4px) scale(.6) translateX(0%) translateY(10%) ;
+        }
+
+        .title4{
+          width: 55%;
+          padding: 4%;
+          border-radius: 5px;
+          background: rgba(0,0,0, .7);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+          transform: translateZ(.4px) scale(.6) translateX(25%) translateY(40%) ;
+        }
+
+        .title5{
+          width: 50%;
+          padding: 4%;
+          border-radius: 5px;
+          background: rgba(0,0,0, .7);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+          transform: translateZ(.4px) scale(.6) translateX(15%) translateY(-5%) ;
+        }
+
+        .slide:nth-child(2n) .title {
+          margin-left: 0;
+          margin-right: auto;
+        }
+
+        .slide:nth-child(2n+1) .title {
+          margin-left: auto;
+          margin-right: 0;
+        }
+
+        .slide, .slide:before {
+          background: 50% 50% / cover;  
+        }
+
+        .header {
+          text-align: center;
+          font-size: 175%;
+          color: #fff;
+          text-shadow: -3px 5px 2px #000;
+        }
+
+        #title {
+          background-image: url("Pagetwoimages/Pagetwoimages001.jpg");
+          z-index:2;
+        }
+
+        #slide3 {
+          background-image: url("Pagetwoimages/Pagetwoimages004.jpg");
+          z-index:3;
+        }
+
+        #title h1 {
+         color: #F4CC01;
+         font-weight: 800;
+         opacity: 0.8;
+         transform: translateZ(.25px) scale(.85);
+         transform-origin: 50% 200%;
+
+        }
+
+        #slide1:before {
+          background-image: url("Pagetwoimages/Pagetwoimages002.jpg");
+          transform: translateZ(-1px) scale(2);
+        }
+
+        #slide2 {
+          background-image: url("Pagetwoimages/Pagetwoimages0031.png");
+          z-index:2;
+        }
+
+
+        #slide4:before {
+          background-image: url("Pagetwoimages/Pagetwoimages005.jpg");
+          transform: translateZ(-1px) scale(2);
+        }
+
+        #slide5 {
+          background-image: url("Pagetwoimages/Pagetwoimages006.jpg");
+        }
+
+        h5{
+          transform: translateZ(.25px) scale(.7);
+          transform-origin: 50% 70%;
+          line-height: 170%;
+          color: khaki;
+          opacity: 0.9;
+          font-weight: 400;
+          padding: 4%;
+          border-radius: 8px;
+          background: rgba(0,0,0, .7);
+          box-shadow: 0 0 6px rgba(0, 0, 0, .7);
+        }
+
+        #slide1 h1{
+          font-size: 70px;
+          color: goldenrod;
+          font-weight: 800;
+          opacity: 0.9;
+          text-shadow: -2px 4px 2px #000;
+        }
+
+        #slide1 p{
+          line-height: 150%;
+          color: khaki;
+          opacity: 0.9;
+          font-weight: 400;
+          text-shadow: -2px 4px 2px #000;
+        }
+
+
+        #slide2 h1{
+          font-size: 65px;
+          color: goldenrod;
+          font-weight: 800;
+          opacity: 0.9;
+          text-shadow: -2px 4px 2px #000;
+        }
+
+        #slide2 p{
+          line-height: 150%;
+          color: khaki;
+          opacity: 0.9;
+          font-weight: 400;
+          text-shadow: -2px 4px 2px #000;
+        }
+
+        #slide3 h1{
+          font-size: 65px;
+          color: goldenrod;
+          font-weight: 800;
+          opacity: 0.9;
+          text-shadow: -2px 4px 2px #000;
+        }
+
+        #slide3 p{
+          line-height: 150%;
+          color: khaki;
+          opacity: 0.9;
+          font-weight: 400;
+          text-shadow: -2px 4px 2px #000;
+        }
+
+        #slide4 h1{
+          font-size: 65px;
+          color: goldenrod;
+          font-weight: 800;
+          opacity: 0.9;
+          text-shadow: -2px 4px 2px #000;
+        }
+
+        #slide4 p{
+          line-height: 150%;
+          color: khaki;
+          opacity: 0.9;
+          font-weight: 400;
+          text-shadow: -2px 4px 2px #000;
+        }
+
+        #slide5 h1{
+          font-size: 65px;
+          color: goldenrod;
+          font-weight: 800;
+          opacity: 0.9;
+          text-shadow: -2px 4px 2px #000;
+        }
+
+        #slide5 p{
+          line-height: 150%;
+          color: khaki;
+          opacity: 0.9;
+          font-weight: 400;
+          text-shadow: -2px 4px 2px #000;
+        }
+
+
+          .navbar {
+              position: sticky;
+              top:0;
+              min-height: 45px;
+              background-color: black;
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 400;
+              z-index:10;
+          }
+
+          .navbar a {
+              float: right;
+              font-size: 16px;
+              color: darkgoldenrod;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+          }
+
+          .dropdown {
+              float: right;
+              overflow: hidden;
+              animation-duration: 3s;
+              animation-name: menu;
+          }
+
+          @keyframes menu{
+            0%{
+              opacity: 0;
+              -webkit-transform: rotateY(-180deg) scale(0.5);
+            }
+            25%{
+              opacity: 0;
+              -webkit-transform: rotateY(-180deg) scale(0.5);
+            }
+            100%{
+              opacity: 1;
+              -webkit-transform: rotateY(0deg) scale(1);
+            }
+          }
+
+          .dropdown .dropbtn {
+              font-size: 16px;
+              font-weight: 400;    
+              border: none;
+              outline: none;
+              color: darkgoldenrod;
+              padding: 14px 16px;
+              background-color: inherit;
+              font-family: inherit;
+              margin: 0;
+
+          }
+
+          .navbar a:hover, .dropdown:hover .dropbtn {
+              background-color: goldenrod;
+              color: white;
+
+          }
+
+          .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: black;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 10;
+          }
+
+          .dropdown-content a {
+              float: none;
+              color: moccasin;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+              text-align: left;
+          }
+
+          .dropdown-content a:hover {
+              background-color: goldenrod;
+          }
+
+          .dropdown:hover .dropdown-content {
+              display: block;
+          }
+
+
+          .footercontainer {
+            display: flex;
+            justify-content: left;
+            background-color: #010000;
+            flex-direction: column;
+            height: 50px;
+          }
+
+          #footer {
+            flex-shrink: 0;
+            bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            width: 100%;
+            position: static;
+            height:50px;
+            background-color: #f5f5f5;
+          }
+
+
+          #footer .footer-block {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 120px;
+            margin-inline-end: 120px;
+            font-size: 14px;
+            color: darkgoldenrod;
+            position: absolute;
+            animation-duration: 4s;
+            animation-name: footertext;
+          }
+
+          @keyframes footertext{
+            0%{
+              opacity: 0;
+              margin-left: 170px;
+            }
+
+            35%{
+              opacity: 0;
+              margin-left: 170px;
+            }
+
+            100%{
+              opacity: 1;
+              margin-left: 120px;
+            }
+          }
+
+
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+      <div class="navbar">    
+          <div class="dropdown">
+            <button onclick="window.location.href='../page3/index3.html'" class="dropbtn">
+              <i class="fas fa-burn"></i>Whiskey Brands
+            </button>
+            <div class="dropdown-content">
+              <!--
+              <a href="#">Scotland: Glenfiddich</a>
+              <a href="#">Scotland: The Glenlivet</a>
+              <a href="#">Ireland: Jameson</a>
+              <a href="#">Ireland: Bushmills</a>
+              <a href="#">US: Woodford Reserve</a>
+              <a href="#">US: Jack Daniel's</a>
+              <a href="#">Japan: Nikka</a>
+              <a href="#">Japan: Yamazaki</a>
+              <a href="#">Taiwan: Kavalan</a>
+            -->
+            </div>
+          </div>
+          <div class="dropdown">
+            <button onclick="window.location.href='../page2/index2.html'" class="dropbtn" style="color: palegoldenrod;">
+              <i class="far fa-star"></i>Types of Whiskey 
+            </button>
+            <div class="dropdown-content">
+              <a href="#scotchW">Scotch Whiskey</a>
+              <a href="#irishW">Irish Whiskey</a>
+              <a href="#BourbonW">Bourbon Whiskey</a>
+              <a href="#TennW">Tennessee Whiskey</a>
+              <a href="#ryeW">Rye Whiskey</a>
+              <a href="#jpW">Japanese Whiskey</a>
+            </div>
+          </div> 
+          <div class="dropdown">
+            <button onclick="window.location.href='../index.html'" class="dropbtn">
+                <span>
+                  <i class="fas fa-burn"></i>
+                </span>
+                How Whiskey is Made
+              </button>
+          </div>
+        </div>
+
+
+
+  <div id="title" class="slide header">
+    <div>
+      <a name="scotchW"></a>
+      <h1>SCOTCH WHISKEY</h1>
+      <h5>Generally made from malted barley or grain with the spirit aged in oak casks for more than three years. Entirely made in Scotland, Scotch is divided into five distinct categories that include single malt, single grain, blended malt, blended grain and blended scotch. Scotch has an earthy and smoky flavour.</h5>
+    </div>
+
+  </div>
+
+<div id="slide1" class="slide">
+  <div class="title">
+    <a name="irishW"></a>
+    <h1>IRISH WHISKEY</h1>
+    <p>This whiskey is made in Eire (Republic of Ireland) or in Northern Ireland. It is made from yeast-fermented grain mash or a mash of malted cereals and takes about three years to age in a wooden cask. Irish whiskey has a smoother finish as compared to scotch.</p>
+  </div>
+  <img class="imgI" src="Pagetwoimages/Pagetwoimages0021.jpg">
+  <img class="imgI" src="Pagetwoimages/Pagetwoimages0022.jpg"> 
+</div>
+
+<div id="slide2" class="slide">
+  <div class="title2">
+    <a name="BourbonW"></a>
+    <h1>BOURBON WHISKEY</h1>
+    <p>Bourbon is a distilled American whiskey, primarily made from corn and is stored in charred oak casks and does not contain any additives. A slightly sweet tasting whiskey, bourbon also is also a bit smoky and has a reddish colour due to fermentation in charred oak casks.</p>
+  </div>
+  <img src="Pagetwoimages/Pagetwoimages0032.jpg">
+  <img src="Pagetwoimages/Pagetwoimages0033.jpg"> 
+</div>
+
+<div id="slide3" class="slide">
+  <div class="title3">
+    <a name="TennW"></a>
+    <h1>TENNESSEE WHISKEY</h1>
+    <p>A type of whiskey produced in Tennessee in the United States. The difference between Tennessee whiskey and bourbon lies in the method of filtering. Tennessee whiskey is steeped in charcoal before going into the casks for fermentation.</p>
+  </div>
+  <img class="imgT" src="Pagetwoimages/Pagetwoimages0041.jpg">
+  <img class="imgT" src="Pagetwoimages/Pagetwoimages0042.jpg"> 
+</div>
+
+<div id="slide4" class="slide">
+  <div class="title4">
+    <a name="ryeW"></a>
+    <h1>RYE WHISKEY</h1>
+    <p>Primarily made in North America with a mash of at least 51 percent rye and is aged in charred barrels for at least two years. Rye is a type of grass that is a member of the wheat family. This whiskey has a slight fruity and spicy flavour and is great for making whiskey cocktails.</p>
+  </div>
+</div>
+
+<div id="slide5" class="slide">
+  <div class="title5">
+    <a name="jpW"></a>
+    <h1>JAPANESE WHISKEY</h1>
+    <p>A type of whiskey produced in Japan. This whiskey uses double malted or peated barley and is aged in a wooden cask. Unlike the other whiskies, it is drier and smokier and comes as single malts or blends.</p>
+  </div>
+  <img class="imgJ" src="Pagetwoimages/Pagetwoimages0061.jpg">
+  <img class="imgJ" src="Pagetwoimages/Pagetwoimages0062.jpg"> 
+</div>
+
+
+    <div id="footer">
+      <div class="footercontainer">
+        <p class="footer-block">Chieh Cheng  |  Work of Web Programming Course  |  School of Visual Arts MFACA</p>
+      </div>
+     </div>
+  
+
+</body>
+
+</html>
